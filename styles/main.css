@@ -65,7 +65,10 @@ body {
 }
 
 .links-container .navbar-link:active {
+<<<<<<< Updated upstream
     color: rgb(233,50,117);
+=======
+>>>>>>> Stashed changes
     background-color: white;
 }
 
