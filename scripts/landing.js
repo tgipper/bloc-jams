@@ -1,7 +1,7 @@
 var pointsArray = document.getElementsByClassName('point');
 
 var revealPoint = function (point) {
-    'use strict';
+
     point.style.opacity = 1;
     point.style.transform = "scaleX(1) translateY(0)";
     point.style.mstransform = "scaleX(1) translateY(0)";
@@ -9,12 +9,12 @@ var revealPoint = function (point) {
 };
 
 var animatePoints = function (points) {
-    'use strict';
+
     forEach(points, revealPoint);
 };
 
 window.onload = function () {
-    'use strict';
+
     if (window.innerHeight > 950) {
         animatePoints(pointsArray);
     }
