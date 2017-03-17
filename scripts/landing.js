@@ -8,7 +8,9 @@ var animatePoints = function () {
         points[index].style.mstransform = "scaleX(1) translateY(0)";
         points[index].style.WebkitTransform = "scaleX(1) TranslateY(0)";
     };
-    for (var = i; i<points.length; i++) {
-        revealPoint(i);       
-    }        
+    
+    for (var i = 0; i<points.length; i++) {
+        revealPoint(i);
+    }      
 };
+
