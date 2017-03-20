@@ -14,7 +14,7 @@ var albumPicasso = {
 };
 
 var albumMarconi = {
-	title: 'The Telepohone',
+	title: 'The Telephone',
 	artist: 'Guglielmo Marconi',
 	label: 'EM',
 	year: '1909',
@@ -25,6 +25,21 @@ var albumMarconi = {
 		{ title: 'Fits in Your Pocket', duration: '3:21' },
 		{ title: 'Can You Hear Me Now?', duration: '3:14' },
 		{ title: 'Wrong Phone Number', duration: '2:15' }
+	]
+};
+
+var albumAdams = {
+	title: 'National Parks',
+	artist: 'Ansel Adams',
+	label: 'Department of the Interior',
+	year: '1941',
+	albumArtUrl: 'assets/images/album_covers/09.png',
+	songs: [
+		{ title: 'The Face of Half Dome', duration: '3:02' },
+		{ title: 'Rose and Driftwood', duration: '2:26' },
+		{ title: 'Canyon de Chelly', duration: '3:45' },
+		{ title: 'Mooonrise', duration: '4:10' },
+		{ title: 'El Capitan', duration: '3:31' }
 	]
 };
 
@@ -43,7 +58,7 @@ var createSongRow = function(songNumber, songName, songLength) {
 
 var setCurrentAlbum = function(album) {
 	//#1
-	var albumTitle = document.getElementsbyClassName('album-view-title')[0];
+	var albumTitle = document.getElementsByClassName('album-view-title')[0];
 	var albumArtist = document.getElementsByClassName('album-view-artist')[0];
 	var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
 	var albumImage = document.getElementsByClassName('album-cover-art')[0];
@@ -65,5 +80,5 @@ var setCurrentAlbum = function(album) {
 };
 
 window.onload = function() {
-	setCurrentAlbum(albumPicasso);
+	setCurrentAlbum(albumAdams);
 };
