@@ -2,7 +2,10 @@ var setSong = function(songNumber) {
 
 	currentlyPlayingSongNumber = parseInt(songNumber);
 	currentSongFromAlbum = currentAlbum.songs[songNumber -1];
+<<<<<<< HEAD
 }
+=======
+>>>>>>> assignment-20
 
 	if (currentSoundFile) {
 		currentSoundFile.stop();
@@ -139,7 +142,10 @@ var nextSong = function() {
     var lastSongNumber = currentlyPlayingSongNumber;
 
     setSong(currentSongIndex + 1);
+<<<<<<< HEAD
 
+=======
+>>>>>>> assignment-20
 	currentSoundFile.play();
 
 
@@ -164,9 +170,13 @@ var previousSong = function() {
     var lastSongNumber = currentlyPlayingSongNumber;
 
     setSong(currentSongIndex + 1);
+<<<<<<< HEAD
 
 	currentSoundFile.play();
 
+=======
+	currentSoundFile.play();
+>>>>>>> assignment-20
 
     updatePlayerBarSong();
 
@@ -177,6 +187,24 @@ var previousSong = function() {
 
     $previousSongNumberCell.html(pauseButtonTemplate);
     $lastSongNumberCell.html(lastSongNumber);
+};
+
+var togglePlayFromPlayerBar = function() {
+
+	
+	if (currentSoundFile.isPaused()) {
+		console.log("click");
+		var songNumberCell = getSongNumberCell(currentlyPlayingSongNumber);
+		songNumberCell.html(pauseButtonTemplate);
+		$mainPlayPause.html(playerBarPauseButton);
+		currentSoundFile.play();
+	} else if (currentSoundFile) {
+		var songNumberCell = getSongNumberCell(currentlyPlayingSongNumber);
+		songNumberCell.html(playButtonTemplate);
+		$mainPlayPause.html(playerBarPlayButton);
+		currentSoundFile.pause();
+	} 
+
 };
 
 var playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></span></a>';
@@ -192,12 +220,13 @@ var currentVolume = 80;
 
 var $previousButton = $('.main-controls .previous');
 var $nextButton = $('.main-controls .next');
-
+var $mainPlayPause = $('.main-controls .play-pause');
 
 $(document).ready(function() {
 	setCurrentAlbum(albumPicasso);
     $previousButton.click(previousSong);
     $nextButton.click(nextSong);
+	$mainPlayPause.click(togglePlayFromPlayerBar);
 	
 	
 	var albumArray = [albumPicasso,albumMarconi, albumAdams];
